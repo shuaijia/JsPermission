@@ -49,11 +49,11 @@ public void onCancel(int requestCode, String... permission) {
      Log.e(TAG, "onCancel: " + requestCode + " " + permission.toString());
 }
 ```
-### step 4:在Activity中加入
+### step 5:在Activity中加入
 ```java
 @Override
 public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
      JsPermission.onRequestPermissionResult(requestCode, permissions, grantResults);
 }
 ```
-### step 5:好了，可以随心所欲了！
+### step 6:好了，可以随心所欲了！
