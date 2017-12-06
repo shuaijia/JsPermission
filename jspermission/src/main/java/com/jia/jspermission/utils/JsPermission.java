@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.jia.jspermission.listener.JsPermissionListener;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,9 @@ import java.util.List;
  */
 public class JsPermission {
 
-    private Activity activity;
+//    private Activity activity;
+    //持有弱引用HandlerActivity,GC回收时会被回收掉.
+    private WeakReference<Activity> mActivty;
 
     private int requestCode;
 
@@ -110,17 +113,17 @@ public class JsPermission {
      */
     @NonNull
     public void send() {
-        if (instance == null || instance.getActivity() == null || instance.getListener() == null
+        if (instance == null || instance.getmActivty().get() == null || instance.getListener() == null
                 || instance.getPermissions() == null) {
             return;
         }
 
         // 判断是否授权
-        if (JsPermissionUtils.getInstance().checkPermission(instance.getActivity(), instance.getPermissions())) {
+        if (JsPermissionUtils.getInstance().checkPermission(instance.getmActivty().get(), instance.getPermissions())) {
             // 已经授权，执行授权回调
             instance.getListener().onPermit(instance.getRequestCode(), instance.getPermissions());
         } else {
-            JsPermissionUtils.getInstance().requestPermission(instance.getActivity(), instance.getRequestCode(), instance.getPermissions());
+            JsPermissionUtils.getInstance().requestPermission(instance.getmActivty().get(), instance.getRequestCode(), instance.getPermissions());
         }
 
     }
@@ -153,12 +156,21 @@ public class JsPermission {
 
 
     //==================================以下为get、set方法================================================
-    public Activity getActivity() {
-        return activity;
-    }
+//    public Activity getActivity() {
+//        return activity;
+//    }
 
     public void setActivity(Activity activity) {
-        this.activity = activity;
+//        this.activity = activity;
+        mActivty=new WeakReference<Activity>(activity);
+    }
+
+    public WeakReference<Activity> getmActivty() {
+        return mActivty;
+    }
+
+    public void setmActivty(WeakReference<Activity> mActivty) {
+        this.mActivty = mActivty;
     }
 
     public int getRequestCode() {
