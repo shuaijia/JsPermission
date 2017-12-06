@@ -22,19 +22,18 @@ public class MainActivity extends AppCompatActivity implements JsPermissionListe
         if (JsPermissionUtils.needRequestPermission()) {
             JsPermission.with(this)
                     .requestCode(20)
-                    .permission(Manifest.permission.CAMERA,
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    .permission(Manifest.permission.CAMERA)
                     .callBack(this)
                     .send();
         }
 
-        if (JsPermissionUtils.needRequestPermission()) {
-            JsPermission.with(this)
-                    .requestCode(30)
-                    .permission(Manifest.permission.BODY_SENSORS)
-                    .callBack(this)
-                    .send();
-        }
+//        if (JsPermissionUtils.needRequestPermission()) {
+//            JsPermission.with(this)
+//                    .requestCode(30)
+//                    .permission(Manifest.permission.BODY_SENSORS)
+//                    .callBack(this)
+//                    .send();
+//        }
     }
 
     @Override
@@ -45,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements JsPermissionListe
     @Override
     public void onCancel(int requestCode, String... permission) {
         Log.e(TAG, "onCancel: " + requestCode + " " + permission.toString());
+        JsPermissionUtils.getAppDetailSettingIntent(this);
     }
 
     @Override
