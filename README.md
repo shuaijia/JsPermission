@@ -57,3 +57,6 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
 }
 ```
 ### step 6:好了，可以随心所欲了！
+更多精彩内容，请关注我的微信公众号——Android机动车
+
+![这里写图片描述](http://img.blog.csdn.net/20180110155733884?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamlhc2h1YWk5NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)	
