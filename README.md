@@ -2,6 +2,7 @@
 对安卓6.0及以上系统，运行时权限动态申请的封装库
 
 ## 用法
+
 ### step 1：添加依赖
 	allprojects {
 		repositories {
@@ -12,12 +13,14 @@
 	dependencies {
 	        compile 'com.github.shuaijia:JsPermission:v1.0'
 	}
+	
 ### step 2:在AndroidManiFest.xml中配置权限（为的是适配6.0以下系统）如：
 ```java
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.BODY_SENSORS"/>
 ```
+
 ### step 3：在Activity或者Fragment中
 ```java
 if (JsPermissionUtils.needRequestPermission()) {
