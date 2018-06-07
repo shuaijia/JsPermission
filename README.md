@@ -25,6 +25,7 @@
 ```
 
 ### step 3：在Activity或者Fragment中
+
 ```java
 if (JsPermissionUtils.needRequestPermission()) {
 	JsPermission.with(this)
