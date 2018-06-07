@@ -44,6 +44,7 @@ if (JsPermissionUtils.needRequestPermission()) {
              .send();
 }
 ```
+
 ### step 4:callBack()方法中传入JsPermissionListener回调
 ```java
 @Override
