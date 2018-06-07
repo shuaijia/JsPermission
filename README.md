@@ -46,6 +46,7 @@ if (JsPermissionUtils.needRequestPermission()) {
 ```
 
 ### step 4:callBack()方法中传入JsPermissionListener回调
+
 ```java
 @Override
 public void onPermit(int requestCode, String... permission) {
