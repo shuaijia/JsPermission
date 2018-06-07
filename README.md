@@ -58,6 +58,7 @@ public void onCancel(int requestCode, String... permission) {
      Log.e(TAG, "onCancel: " + requestCode + " " + permission.toString());
 }
 ```
+
 ### step 5:在Activity中加入
 ```java
 @Override
