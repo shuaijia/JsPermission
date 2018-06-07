@@ -60,6 +60,7 @@ public void onCancel(int requestCode, String... permission) {
 ```
 
 ### step 5:在Activity中加入
+
 ```java
 @Override
 public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
