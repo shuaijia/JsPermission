@@ -67,6 +67,7 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
      JsPermission.onRequestPermissionResult(requestCode, permissions, grantResults);
 }
 ```
+
 ### step 6:好了，可以随心所欲了！
 更多精彩内容，请关注我的微信公众号——Android机动车
 
