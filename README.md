@@ -5,6 +5,7 @@
 ## 用法
 
 ### step 1：添加依赖
+
 	allprojects {
 		repositories {
 			...
@@ -16,6 +17,7 @@
 	}
 	
 ### step 2:在AndroidManiFest.xml中配置权限（为的是适配6.0以下系统）如：
+
 ```java
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
