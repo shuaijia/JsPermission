@@ -6,15 +6,17 @@
 
 ### step 1：添加依赖
 
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+```
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
-	dependencies {
-	        compile 'com.github.shuaijia:JsPermission:v1.0'
-	}
+}
+dependencies {
+	compile 'com.github.shuaijia:JsPermission:v1.0'
+}
+```
 	
 ### step 2:在AndroidManiFest.xml中配置权限（为的是适配6.0以下系统）如：
 
